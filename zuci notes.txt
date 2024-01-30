@@ -1,0 +1,602 @@
+Java is object oriented Language:-
+=================================
+	
+	void main(){
+	
+	}
+	
+	class Demo{
+		public static void main(String[] arg){
+		}
+	}
+
+.java 
+=====
+	its an source code - high level language
+.class
+=======
+	byte code instruction - it contains symbols and letters - 	intermediate language
+
+	java Demo - Demo.class loaded into the class loader subsystem
+	
+jdk - javac, java, more - compiler, interepreter
+jre - java - interpreter - JRE 
+		
+			sports.apk (.class)
+			  |
+			mobile (jre)
+			  |
+			play games
+JRE - interepreter
+JVM - class loader subsystem, runtime memeory area,engine- interpreter,jit compiler
+
+IDE - Integrated Developement Environment - Eclipse,sts, Intelij, netbeans,jcreator
+					    
+	software
+
+Keywords:-
+	reserved keywords - all letters must be in lower case
+	userdefined words - can be lowercase or upper case or camel case
+		
+	class name - camel case
+		   - one word - starting letter must be in upper case
+				remaining letter should be lower case 
+		   - multiple words
+			      - Each word starting letter must be upper 				case remaining letters must be in lower
+				case
+	method name - camel case
+		   - one word - all letters must be in lower case ()
+		   - multiple words - first word all letters in lower case
+				      second word onward each word
+				      starting letter must be in upper 				      		      case ()
+			age();	
+			findPersonAge();
+	variable name - camel case or lower case
+		   - one word - all letters must be in lower case
+		   - multiple words - first word all letters in lower case
+				      second word onward each word
+				      starting letter must be in upper 				      		      case	
+			age;
+			personAge;
+			customerAadharNumber;
+			Constant variable:-
+				All letters must be in upper case 				connected with underscore(_)
+
+	package - all letters must be in lowercase
+	
+folder -> Project -> packages -> class(.java) files
+
+Control Statements:-
+	1.  Conditional control statement
+		through condition going to control the statement  
+
+		if(condition)
+		{
+			statement;
+		}
+		if(condition)
+		{
+			statement;
+		}else{
+		}
+		switch(choice){
+			case 1:
+				statements:
+			case 2:
+				statements:
+			default:
+				statements;
+		
+		}
+	2.  Unconditional statement
+		without condition i can control the statement
+		break;
+		continue;
+		can be used either in the looping or switch statement
+Looping:-
+	for
+	while
+	do while
+	advanced for loop
+	for each loop
+
+	byte	1byte	8bits 
+	short   2bytes  16bits
+	int	4bytes	32bits
+	long	8bytes	64bits
+	float	4bytes	32bits
+	double	8bytes	64bits
+	char	2bytes	16bites
+	boolean	1bit
+
+	Datatypes
+	1. primitive type
+		byte,short,int,long,float, double,char,boolean
+	2. Non primitive type
+		other than 8 primitive type 
+		String, Array
+			int quantity;//primitive type
+			String quantity;
+			boolean s;
+Array:-
+	Collection of similar types
+		int[] k=new int[5]; //collection 5 primitive values
+		String[] name=new String[5];//collection 5 string non
+					       primitve values
+	array size is fixed. cannot increase or decrease
+	continous memory  allocation		
+	random access
+	Array Operations:-
+		1. sorting
+		2. search
+		3. fill
+		4. suffle
+		5. copy	
+Functions or method:-
+	* Functions are subprogram
+	* Functions are used to perform a logic or task
+	* icreased code reusability
+	* saves time and effort
+	* function name should be a verb
+	* it is has to do a single responsibility task or logic
+	
+	Types of methods:
+	1. function with no arg with no return type
+	2. function with arg with no return type
+	3. function with no arg with return type
+	4. function with arg with return type
+
+
+	public void login(){
+		String username="rajesh";
+		String password="rajesh123";
+		// perform validation logic - data - username,password
+	}
+		
+	public void login(String username,String password){
+		// perform validation logic - data - username,password
+	}
+	public void calculateEmi(int amount,float roi,int tenure){
+		// emi logic - amount,roi,tenure	
+	}
+
+Object Oriented Approach:-
+		Object -  real world existing things are called object
+		chair
+		pen
+		laptop
+		employee
+		bottle	
+		transaction
+		object contains properties, behaviour
+		objects are made from class
+		instance of a class called as object
+		
+Class:-
+		class is a template or blueprint from which objects are 			made
+		class contains a members
+			- member variable - static member variable
+					    instance variable
+			- member function - static member function
+					    instance variable
+			- constructor	    
+			- static block
+
+			class ------------> object
+			variable          properties 
+			method	  	  behaviour
+
+	Two types of classes:
+	1. Userdefined class
+	2. Predefined Class
+
+	CarLoan is a Loan
+	Car has a Engine
+	
+	Account -
+				number
+				name
+				type
+				balance
+				login()
+				updateProfile()
+		
+		class Account{
+			int number; // member variable
+			String name;// member variable
+			String type;// member variable
+			int balance;// member variable
+			public void login(){ // member function
+			}
+			public void updateProfile(){// member function
+			}
+		}
+
+		
+		ICICI BANK   ---->  ZUCI SYSTEMS
+			Approach + Java is programming language
+		Requirement
+			Object Oriented Approach
+			
+			Account - class diagram
+				number
+				name
+				type
+				balance
+				login()
+				updateProfile()
+			Loan
+				number
+				type
+				amount
+				roi
+				approval()
+				closing()
+				payment()
+				
+			Deposit
+			Withdrawl
+				amount
+				atm
+				balance
+				doTrabsfer()
+			Transaction
+			Cheque
+			CreditCard	
+			DebitCard
+			PinChange
+
+		makemytrip	
+			passenger
+			booking
+			payment
+			transport
+			train
+			bus
+			flight
+			cancellation
+
+			OOAD - Desing Document
+				class diagram
+				sequence diagram
+				EER diagram
+			developer
+				- 
+variable:-
+	1. instance variable
+		A variable declared inside the class outside of any method
+		is called as instance variable
+		scope - with in the class
+		lifetime - till end of the class
+	2. static variable
+		A variable declared inside the class outside of any method
+		with static keyword is called as static variable
+		scope - with in the class
+		lifetime - till end of the class
+	3. local variable
+		A variable declared inside the method or block is called
+		as local variable
+		scope - whith in method or block
+		lifetime - till end of the method or block
+	scope
+	lifetime
+
+	
+create a class Phone 
+create another class Samsung	
+	access the members of phone class to samsung class using IS-A
+create another class IPhone
+	access the members of phone class to IPhone class using HAS-A
+
+	class Phone{
+		int age=45;//declaration and initialization
+		Sysout
+	}
+Constructor:-
+	* constructor is a special member function
+	* constructor doesnot returns any value
+	* constructor will be called automatically
+	* constructor name should be as same as class name
+	* overload the constructor
+	* If the classes are in the inheritance constructor will not be
+	  in inherited to another class
+	* Constructor chaining
+Encapsulation:-
+	other program should not access the data member directly
+	
+	Booking, Order, Fund, Product, Patient
+	class - variable private,
+		no arg cons,
+		arg cons, 
+		getter / setter - POJO - Plain Old Java Object	
+Access modifier:
+	Visibility
+	before variable, before method, before class / interface
+		public 
+		protected -  with in the class can access, 
+			  otherclass / subclass from same package access
+			  otherclass / subclass other package no access
+			  subclass other package access
+		default - package level access
+			  with in the class can access, 
+			  otherclass / subclass from same package access
+			  otherclass / subclass other package no access
+		private - only with in the class can access, 
+			  otherclass / subclass from same package noaccess
+			  otherclass / subclass other package no access
+	variable:-	
+		accessmodifier nonaccessmodifier type variablename;
+	method:
+		accessmodifier nonaccessmodifier returntype methodname(){
+			//logic
+		}
+	class:
+		accessmodifier nonaccessmodifier class ClassName{
+			members
+		}
+	
+
+	method:	
+Non Access Modifier:
+	it changes the default bheviour	
+	zero or more
+	static, final, synchronized, native,abstract etc.,
+
+	static int age=9; //instance variable - heap
+			  //method area
+
+
+
+Packages:-
+	java project
+		- 500 .java files	
+
+	iciciapp ----> www.icicibank.com		
+	
+			com.icicibank.account
+				Account.java
+				PinChange.java		
+				Update.java
+			com.icicibank.card
+				CreditCard.java
+				DebitCard.java
+			com.icicibank.loan
+				HousingLoan.java
+				CarLoan.java
+				GoldLoan.java	
+Polymorphism:-
+		many forms
+		1. Compile time polymorphism
+	           overloadding - method with same name with diff arg
+		   compile time binding 
+		   Early binding
+		   static binding
+		
+		sendGift(byself){
+			-----;
+		}
+		sendGift(friend){
+			-----;
+		}
+		sendGift(courier){
+			-----;
+		}
+		sendGift(postal){
+			-----;
+		}
+
+		2. Runtime polymorpshim
+		overriding -  method with same name same arg
+		Runtime binding
+		late binding
+		dynamic binding
+		
+		sendGift(courier){
+			-----;
+		}
+		sendGift(postal){
+			-----;
+		}
+
+Task 1: Encapsulation vs Abstraction
+Task 2: Type casting
+Task 3: Object Casting 
+
+Inheritance:-
+	1. IS-A Inheritance (by using extends)
+		1.1 single inheritence
+		1.2 Multilevel iheritance
+		1.3 Hierachial Inheritance
+		1.4 Multiple Inheritance
+		1.5 Hybrid Inheritance
+	2. HAS-A Inheritance (creating an object of one class into 
+ 			     another class) (Association)
+
+		2.1 Composition
+		2.2 Aggregation
+final keyword:-
+	before variable - constant variable
+	before method - cannot override
+	before class - cannot be extended (IS-A inheritance)
+Abstraction:-
+	
+	implementation  - complete implementation
+	class conatins members 
+	concrete class - all members are implemented and no abstract 			 methods
+	abstract class - if any of the member is abstract then your
+			 class is an abstract class		
+		 	- If a class has atleast one abstract method 
+			  then make your class as abstract class
+	If a class is an abstract class cant create an object 
+	for that class(Has-a inheritance). but you can make IS-A(extends)
+interface:-
+	if all the methods are abstract method make that as an interface
+	By default interface is meant for abstraction	
+	By default all the method inside the interface are public abstract
+	methods then remove the abstract and public keyword
+
+class -------> class		interface ------> class
+      extends				implements
+
+interface ---------> interface 
+	   extends
+
+Exception Handling:-
+	Exception is an abnormal condition happens during runtime code 
+	execution. If it happen the program will be terminated abrubtly
+	
+	jvm making an exception stops the program immediatly
+	
+	Now programmer handle the exception. to smoothly terminate
+	the program and contious the code till in ends
+	try{
+		suspected code or anticipating the code that 
+		created an exception
+	}
+	catch(exceptiontype){
+		//handler
+	}
+	blocking - 
+	Non blocking - 
+	interuption
+Mutitasking:-
+	1.1 Multiprocessing
+			Word,notepad,chrome,mspaint,intellj - Queue
+		HD--> RAM --> Process --> 1
+		Process is an heavyweight
+		context switch very diffcult
+			
+	1.2 Multithreading
+			Word.exe
+				save - task - thread 1
+				grammer - task - thread 2
+				format - task - thread 3
+				spell checking - task - thread 4
+			save, grammer,format,spell,typing,paint,erase,
+			draw  - queue 
+				CPU scheduling algorithm
+		HD --> RAM --> CPU(4)
+
+		context switch
+		queue
+		priority
+		shceduling algorithm
+	
+Java supports multithreading
+		
+		task - method
+		thread --> task
+		thread --> task
+		Thread
+		public void type(){//typing task
+thread1 		1min		
+		}
+		public void grammer(){//grammer task
+thread2			1min
+		}
+
+		public void autoSave(){//autosave task
+thread3			1 min		
+		}
+
+		thread - many task
+		many threads - task
+How to create threads in java:-
+	1. by extending a thread class
+	2. by implementing runnable interface
+
+	steps:
+		1. create a thread 
+		2. assign a task to a thread	run()
+		3. start a thread
+		4. interrupt the thread(option)
+		5. you can also stop the thread(option)
+
+	public class Demo implements Runnable{
+	
+	}
+		Demo d=new Demo();
+Java I/O Stream	API:-
+=====================
+	java.io package
+	
+	This package contains a relatively large number of classes that 		support input and output operations. 
+	
+	These classes may be categorized into groups based on the data 		type on which they operate.
+
+	1. Byte Stream 
+		Classes that provide support for handling I/O operations 			on bytes.(1 - byte 8 bits) -  raw data - image,audio,video
+		1. InputStream - read - 8 bits
+		2. OutputStream - write - 8 bits
+	2. Character Stream 
+		Classes that provide support for managing I/O operations 			on characters.(16 Unicode character)
+		files which character - pdf , word, xsl
+		1. Reader
+		2. Writer
+		
+
+	byte stream ----> character stream
+	character -----> byte stream
+
+Serialization and De-serialization:-
+API:- it is software used to connect with other system to exchange data
+Java API- set of classes, interface, enums etc
+String API- set of classes, interface, enums etc
+Collection API:- 
+JDBC API:- - set of classes, interface, enums etc
+Array API:- 
+
+Array:-
+	group of similar values stored 
+	primitive value
+		int[] list=new int[5];
+	reference value or object
+		String[] names=new String[5];
+		Employee[] employees=new Employee[5];
+	continous memory allocation
+	Linear Access or random access
+	Array is fixed in size. cannot be increased or decreased 
+	
+	More no insertion / Deletion performance becomes low
+LinkedList:-
+	collection of nodes and links are called as linkedlist
+	
+	db
+	  - productdetails
+		-300        ------->  Product[] pro=new Product[100];
+				      Collection - dynamic in size
+
+Collection:-
+	It holds group of similar object or non primitive variable
+	dynamic in size
+	Collection API - set of classes, interfaces etc we can
+			 manage group
+	Each collection holds one Datastructure to manage group of objects
+	managing group of object:-
+	1. Add
+	2. Remove
+	3. Move
+	4. Replace
+	5. Search
+	6. sort
+	7. get
+	8. copy
+	
+iterator vs listIterator vs descendingIterator vs splitIterator
+
+Arrays - util package
+Comparable - interface - sorting logic
+Comparator - interface - sorting logic
+
+
+
+
+
+
+
+
+		
+	
+
+
+	
