@@ -588,14 +588,207 @@ Arrays - util package
 Comparable - interface - sorting logic
 Comparator - interface - sorting logic
 
-
-
-
-
-
-
-
+Java 8:-
+	Functional interface:
+		A interface has only one abstract method that is to be 		called as functional interface
+	Lamda expression
+		it's an expression it is an implementation of one abstract
+		method from functional interface
+	Java Stream API
+	
+	c=a+b;//expression
+	Function or method:-
+	public void add(int no1.int no2){
+		System.out.println("add"+(no1+no2))
+	}
+	1. lamda expression doesnot take access and non access modifier	
+	   lamda expression doesnot take any annotation
+	2. lamda expression doesnot takes return type
+	3. lamda expression doesnot takes method name
+	4. lamda expression doesnot takes argument type
+	5. lamda expression after the parameter includes -> (lamda 	   	operator)
+	6. lamda expression body has only one statement you can remove
+	   curly braces
+	7. lamda expression body has only one statement that too return 	   statement. then you can also return keyword
 		
+	FunctionalInterface fi=(no1,no2)->no1+no2;
+	
+	Predefined Functional Interface
+		Comparable
+		Comparator
+		Runnable
+		Predicate<T> 	// boolean test(T t);
+		Consumer<T>	// void accept(T t);
+		Function<T,R> 	// R apply(T t);
+		Supplier<T>	// T get();	
+
+Data:-
+	useful information is called as data
+		6789 Tv 8484784 description 
+Database:-
+	Collection of useful information is called as database
+	collection of tables
+		6789 Tv 8484784 description 
+		6789 Tv 8484784 description 
+		6789 Tv 8484784 description 
+		6789 Tv 8484784 description 
+DBMS(Database management system):-
+	It is software that manages your database	
+	
+	mysql, oracle, mongodb, sqlserver,postgresql
+	
+		data --------------> table structure
+		row and colums		
+RDBMS-Relational DBMS
+
+	1. connect - ip:port
+		     username
+		     password	
+	SQL Commands:-
+	1. DDL - structure
+		defining the structure or database
+		1.1 create 
+			CREATE TABLE tablename(columnname1 datatype(size),
+			columnname2 datatype(size), etc);
+			Eg:-
+			CREATE TABLE employee(id number,name varchar(20),
+			dob date,cgpa float);
+			
+		1.2 alter - add - add a new column or constraint
+			  - modify - change existing column or constraint
+			  - rename - change the columnname
+			  - drop - drop a column or constraint 
+		1.3 rename
+		1.4 drop
+		1.5 truncate
+		1.6 desc 
+	2. DML - data
+		2.1 insert
+			INSERT INTO tablename VALUES(value1,value2,..);
+		2.2 select
+			SELECT * FROM employee;
+		2.3 update
+			UPDATE tablename SET columnname=newvalue,
+				columnname=newvalue,.. WHERE condition);
+		2.4 delete
+			DELETE FROM tablename WHERE condition;
+	3. DCL
+		3.1 grant
+		3.2 revoke
+	4. TCL	
+		4.1 commit
+		4.2 rollback
+		4.3 savepoint
+
+constraints:-
+		1. domain constraint
+			1.1 datatype
+			1.2 size
+		2. Integirity constraint
+			2.1 unique - values must be different
+				     accept null value
+			2.2 not null - will not accept a null value
+				       duplicate allow
+			2.3 primary key - unique + not null
+			2.4 foreign key - always referes to primary key
+			2.5 default - 
+			2.6 check or between
+
+Field	Type		Null	Key	Default	Extra
+id	int		NO		NULL	
+email	varchar(25)	YES	UNI	NULL
+
+	INSERT
+	DELETE 
+	UPDATE 
+	SELECT
+	
+	Clauses:-
+		filter and select something
+		USE - filter and selects one database among many database
+		SELECT - filter and select one or more rows from result
+		FROM - filter and select one table from database			WHERE - filter and select a row(s) from the table
+		Order by -  sorts in asc | desc based on one column		
+		group by - filter the row(s) it makes a group
+		having - filters the row(s)
+			 having clause used along group by clause
+Customers
+customer_id	first_name	last_name	age	country
+1		John		Doe		31	USA
+2		Robert		Luna		22	USA
+3		David		Robinson	22	UK
+4		John		Reinhardt	25	UK
+5		Betty		Doe		28	UAE
+
+Subquery:-
+	Writing a query with in a query is called sub query
+	inner query and outter query
+	Syntax:-
+		outer	inner
+		query(subquery)
+	first it will execute inner query then result will be given to 
+	outter query
+	1. single row subquery
+		query(subquery) - inner query return exactly one row
+				  to the outer query
+				=,>,<,>=,<=,!=
+	2. multi row subquery	
+		query(subquery) - inner query return more than one row
+				  to the outer query
+				IN. NOT, NOT IN,SOME,EXISTS
+	3. correlated  subquery
+  
+Joins:-
+=====
+	SELECT columnnames FROM customers,orders;
+	
+	1. Inner join
+		Equi Join
+			Natural Join
+		Non Equi Join	
+		
+		--SELECT customers.customer_id,first_name,item,amount FROM 		customers,orders WHERE 				Customers.customer_id=Orders.customer_id; 
+		--theta style
+
+		SELECT c.customer_id,first_name as name,item,amount FROM 			customers as c JOIN orders as o ON 				c.customer_id=o.customer_id;  --equi join
+
+		--SELECT c.customer_id,first_name as name,item,amount FROM 		customers as c JOIN orders as o ON c.customer_id!				=o.customer_id; --non equi join 
+
+		SELECT c.customer_id,first_name as name,item,amount FROM 			customers as c NATURAL JOIN orders as o; 
+	2. outer join
+		left outer join
+		right outer join
+		Full outer join - set - union, intersect,
+	3. self join
+		SELECT column_name(s) FROM table1 T1, table1 T2
+		WHERE condition;
+		SELECT A.CustomerName AS CustomerName1, B.CustomerName AS 		CustomerName2, A.City
+		FROM Customers A, Customers B
+		WHERE A.CustomerID <> B.CustomerID
+		AND A.City = B.City
+		ORDER BY A.City;
+JDBC - Java Program Database connectivity:-
+		java --> connection --> mysql(ip:port username,password)
+		Statement or prepared statement or callable statement
+		Query - execute()
+
+		JDBC API - java.sql / javax.sql
+			- classes and interface etc which help us
+			  connect and execute queries any database
+			DriverManager(c) - public static Connection
+					  getConnection(url, user,pass)		
+					  {
+					  }
+			Connection(I) - reference holds connection obj
+			Statement(I)
+			PreparedStatement(I)
+			CallableStatement(I)
+			Query execution
+				execute()
+				executeUpdate()
+				executeQuery()
+			ResultSet(I)
+				
 	
 
 
