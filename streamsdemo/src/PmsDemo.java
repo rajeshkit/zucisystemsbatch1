@@ -9,6 +9,8 @@ public class PmsDemo {
      //   Object obj1=new Product();//implicit object casting
         Product obj =(Product) ois.readObject();
         System.out.println(obj);
+        ois.close();
+        fis.close();
 
     }
 }

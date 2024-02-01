@@ -1,11 +1,16 @@
 package mapdemo;
 
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
 public class MapDemo {
     public static void main(String[] args) {
+        Comparable com;
+        Runnable r;
+        Comparator com1;
+
         HashMap<Integer, String> hm = new HashMap();
         hm.put(600069, "Chennai");
         hm.put(637001, "Namakkal");

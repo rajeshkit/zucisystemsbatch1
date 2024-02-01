@@ -23,5 +23,8 @@ public class Pms {
         FileOutputStream fis=new FileOutputStream("f:/product.txt");
         ObjectOutputStream oos=new ObjectOutputStream(fis);
         oos.writeObject(product);
+        s.close();
+        Product p=new Product();
+      //  p.close();
     }
 }
