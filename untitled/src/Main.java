@@ -1,11 +1,66 @@
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.io.FileReader;
+import java.sql.*;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        //addNewRestaurant();
+        //getAllRestaurants();
+        //getRestaurantById();
+        // deleteRestaurantById();
+        updateRestaurantNameById();
+
+
+    }
+    public static void getRestaurantById() {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the restaurant id would like to see:");
+        int id=sc.nextInt();
+        RestaurantDao restaurantDao=new RestaurantDao();
+        Restaurant res=restaurantDao.getRestaurantById(id);
+        if(res!=null) {
+            System.out.println(res);
+        }else{
+            System.out.println("No restaurant found for the Id:"+id);
+        }
+    }
+    public static void updateRestaurantNameById() {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the new restaurant name would like to update:");
+        String restaurantName=sc.nextLine();
+        System.out.println("Enter the restaurant ID would like to update:");
+        int restaurantId=sc.nextInt();
+        List<Restaurant> list=RestaurantDao.updateRestaurantNameById(restaurantName,restaurantId);
+        if(list.isEmpty()){
+            System.out.println("No restaurant details found in db");
+        }else{
+            for (Restaurant restaurant:list) {
+                System.out.println(restaurant);
+            }
+        }
+      }
+
+    public static void deleteRestaurantById() {
+        Scanner s=new Scanner(System.in);
+        System.out.println("Enter the restaurant ID would like to delete");
+        int restaurantId = s.nextInt();
+        //DELETE FROM restaurant WHERE id=restaurantId;
+        //executeUpdate
+
+        try(Connection connection=DriverManager.getConnection(DBUtil.URL, DBUtil.USERNAME, DBUtil.PASSWORD);
+            Statement stmt=connection.createStatement();)  {
+            stmt.executeUpdate("DELETE * FROM where ID="+restaurantId+"");
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public static void getAllRestaurants() {
+
+    }
+
+    public static void addNewRestaurant() {
         Scanner s=new Scanner(System.in);
         System.out.println("Enter the restaurant details");
         System.out.println("Enter the ID:");
@@ -16,25 +71,10 @@ public class Main {
         System.out.println("Enter Address");
         String restaurantAddress=s.nextLine();
         System.out.println("Enter Phone");
-
         long restaurantPhone=s.nextLong();
         s.nextLine();
         System.out.println("Enter date of establishment(yyyy-MM-dd)");
         String restaurantDoe=s.nextLine();
-        try {
-
-            String url="jdbc:mysql://localhost:3306/zuci";
-            String username="root";
-            String password="root@123";
-            Connection connection;
-            Statement stmt;
-            connection = DriverManager.getConnection(url,username,password);
-            stmt = connection.createStatement();
-            stmt.executeUpdate("INSERT INTO restaurant VALUES("+restaurantId+",'"+restaurantName+"','"+restaurantAddress+"',"+restaurantPhone+",'"+restaurantDoe+"')");
-
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
-        }
 
     }
 }
