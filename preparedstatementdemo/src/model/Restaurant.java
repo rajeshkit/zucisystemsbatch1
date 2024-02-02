@@ -1,10 +1,12 @@
+package model;
+
 public class Restaurant {
     private int id;
     private String name;
     private String address;
     private long phone;
     private String doe;
-    Restaurant(){
+    public Restaurant(){
 
     }
 
@@ -58,7 +60,7 @@ public class Restaurant {
 
     @Override
     public String toString() {
-        return "Restaurant{" +
+        return "model.Restaurant{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", address='" + address + '\'' +

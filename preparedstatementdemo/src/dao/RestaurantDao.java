@@ -1,15 +1,21 @@
+package dao;
+
+import config.DBUtil;
+import model.Restaurant;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 public class RestaurantDao {
     // database code here
     public Restaurant getRestaurantById(int restaurantId) {
         Restaurant restaurant=null;
         try(Connection connection= DriverManager.getConnection(DBUtil.URL, DBUtil.USERNAME, DBUtil.PASSWORD);
-            Statement stmt=connection.createStatement();
-            ResultSet rs=stmt.executeQuery("SELECT * FROM restaurant WHERE id="+restaurantId+"");)  {
+            PreparedStatement pstmt=connection.prepareStatement("SELECT * FROM restaurant WHERE id=?");)
+        {
+            pstmt.setInt(1,restaurantId);
+            ResultSet rs=pstmt.executeQuery();
             if(rs.next()){
                 restaurant=new Restaurant();
                 restaurant.setId(rs.getInt(1));
@@ -76,11 +82,11 @@ public class RestaurantDao {
         }
     }
 
-    public static void addNewRestaurant(int restaurantId,String restaurantName,String restaurantAddress,long restaurantPhone,String restaurantDoe) {
+    public static void addNewRestaurant(Restaurant restaurant) {
         try(Connection connection=DriverManager.getConnection(DBUtil.URL, DBUtil.USERNAME, DBUtil.PASSWORD);
             Statement stmt=connection.createStatement();
             ResultSet rs=stmt.executeQuery("SELECT * FROM restaurant");) {
-            stmt.executeUpdate("INSERT INTO restaurant VALUES("+restaurantId+",'"+restaurantName+"','"+restaurantAddress+"',"+restaurantPhone+",'"+restaurantDoe+"')");
+            stmt.executeUpdate("INSERT INTO restaurant VALUES("+restaurant.getId()+",'"+restaurant.getName()+"','"+restaurant.getAddress()+"',"+restaurant.getPhone()+",'"+restaurant.getDoe()+"')");
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
