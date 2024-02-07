@@ -1,0 +1,16 @@
+h1{
+    font-size: 6em;
+    border-style: dashed;
+    border-width: 10px;
+    border-color: #008000;
+    margin-top: 100px;
+    padding: 300px;
+}
+#para2{
+    font-size: 2em;
+    color: blue;
+}
+.content{
+    font-size: 3em;
+    color: burlywood;
+}
