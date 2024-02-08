@@ -788,8 +788,237 @@ JDBC - Java Program Database connectivity:-
 				executeUpdate()
 				executeQuery()
 			ResultSet(I)
-				
+	1. static query
+		query values applied directly on a query
+		INSERT INTO restaurant(4554.'xyz','chennai',67854,'2012-			12-12');
+	2. dynamic query			
+		Query doesnot takes a value in the query. rather than
+		value is supplied later 
+		INSERT INTO restaurant VALUES(?,?,?,?,?);
+			? - query parameter
+			the value is supplied late time
+	Query execution:-
+			1. query parse
+			2. query compile
+			3. query execution plan
+			4. cost least execution plan
+			5. execute
+
+	static query				dynamic query
+	Statement				PreparedStatement
+========================================================================
+						Precompiled query
+	1. query parse				1. query parse
+	2. query compile			2. query compile
+	3. query execution plan			3. query execution plan
+	4. cost least execution plan		4. cost least execution 						           plan
+	5. execute				5. execute
+SQL Queries:-
+
+	PL/SQL - Procedural langauge
+		 c - procedural language
+			function -  calculation
+			procedure - task 
+			variable
+			logic
+			function or procedure call
+			argument pass
+			
+		public void main(int a,int b){
+			return a+b;
+		}		
+	
+		INSERT - Write -  int executeUpdate() - DML
+		DELETE - Write - int executeUpdate() - DML
+		UPDATE - Write - int executeUpdate() - DML
+		SELECT - Read - ResultSet executeQuery() - DML
+		boolean execute - read or write - DML,DDL 
+Transaction:-
+	
+	a logical unit of work is a transaction
+		
+	Query - task
+		permanent - commit
+	Query - task
+		permenant - commit
+	Query - task 
+		permenant - commit
+
+	begin
+		bal 5000			bal 100
+		transfer 500			bal=bal+500
+		bal = bal-500
+		4500
+	end;
+		-commit
+		-rollback
+
+	A   			----    B
+	bal 5000			bal 100
+	transfer 500			bal=bal+500
+	bal = bal-500
+	4500
+	ACID
+		atomicity
+		consistency
+		isolation
+			A     			B	
+			x=500			READ X 500
+			x=x+400
+			x=900		
+		Durability
+		
+
+	Refer : https://www.ibm.com/docs/en/i/7.3?topic=transactions-		transaction-isolation-levels
+
+HTML:- hyper text markup language
+	
+	- consists of tag or element
+	- define a structure of the document
+	- make a content document
+	
+	<tagname attribute></tagname> or <elementname></elementname>
+	</elementname>
+	name=value
+	<h1 align='center' style="">text</h1> ... <h6>text</h6>
+	<p>text</p>
+	<b></b> or <strong></strong>
+	<i></i> or <em></em>
+	<img></img>
+	<a></a>
+	</hr></br>
+	HTML Forms:-
+		USed to carry user date from the user input to the
+		server
+		
+http://127.0.0.1:5500/registration.html?firstname=sdfsdfsd&password=456fsgg&age=44&gender=on&state=Telungana&qualification=on&qualification=on&address=fgdg%0D%0Asgs%0D%0Ag%0D%0Asdgsd%0D%0Ag
+http://127.0.0.1:5500/registration.html
+/registration.html - Resource Path 
+registration.html - resource name
+? - seperaor or delimeter - resource and query parameter
+Query Paratmeter - Query Param name=value
+& - delimeter or seperator between query parameter
+
+CSS - cascading style sheet
+	
+	style rule
+		selector{
+			propertyname:value;
+			propertyname:value;
+			propertyname:value;
+		}
+
+		CSS:-
+			inline 
+				writing css rule near by html element
+				with style attribute
+			internal
+				html document head <style></style>
+			external
+				seperate .css file will be created 
+				style rule defined inside
+				which ever html u want to apply those
+				style in that document link it
+
+
+			css selector:-
+			1. element selector
+			2. id selector(#)
+			3. class selector(.)
+	
+	Html Elements:-
+		Inline level element
+			<b>,<i>,<span>
+		block level element - Box Layout
+			<div><p><h1>
+		
+	Bootstrap:-
+	
+		grid system
+		flex
+Javascript:-
+	Its a scripting language
+	it not a strict type language
+	
+	Datatypes:-
+		primitive datatype
+		number
+		string
+		boolean
+		undefined
+		null
+		Non Primitive 
+
+		array
+			var marks=[456,344,6767,6767,7878,454]
+		object
+		
+
+
+
+		Inline
+		Internal
+			<script></script>
+		External
+			.js 
+	Arrays
+	Objects
+		
+	
+	Event Handle
+	Form Validation
+	DOM Manipulation - js 
+			
+Jsp - Java Server Pages
+	html inside java
+	is nothing but it is a servlet
+	jsp tag:-
+		scriptlet tag
+			<% java code %>
+		expression tag =
+ 			<%= java code %>
+		declaration !
+		directive tag <%@ page %>
+			1. page <%@ page %>
+			2. include <%@ include %>
+			3. taglib <%@ taglib %>
+		
+
+		jstl
+			core
+			format
+			xml
+			sql
+JPA:-(Java Persistence API) - what
+	It is a specification how java object can be mapped and managed 	
+	to a relation table 
+	Interfaces - abstract methods	
+	Hibernate, EclipseLink,iBatis,topLink			
+Hibernate:-
+	Implements JPA specification
+	Hibernate - JPA provider
+	Hibernate is an ORM tool
+	Java Object -----> maps to into a table
+	ORM - Object Relational Mapping
+	ORM implementation
+	classname	 mapping		tablename
+	datatype				column datatype
+	variable				column name
+	constructor				
+	methods
+		
+	
+
+	
+	Configuration(C) - hibernate.cfg.xml 
+	SessionFactory - Takes configuration as input
+	Session - with the help of session factory it creates a session
+		  connection to the database
+	Transaction - commit, rollbck
+	session 
 	
 
 
-	
+
+
+
