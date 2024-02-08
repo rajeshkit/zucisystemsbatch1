@@ -15,10 +15,11 @@ public class SearchRestaurantServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 			
-			 Restaurant restaurant=RestaurantDao.getRestaurantById(Integer.parseInt(request.getParameter("id")));
-			 RequestDispatcher rd=request.getRequestDispatcher("displayrestaurant.jsp");
-				request.setAttribute("rest", restaurant);
-				rd.forward(request, response);
+			Restaurant restaurant=RestaurantDao.getRestaurantById(Integer.parseInt(request.getParameter("id")));
+			RequestDispatcher rd=request.getRequestDispatcher("displayrestaurant.jsp");
+			request.setAttribute("rest", restaurant);
+			request.setAttribute("name", "Rajesh N");
+			rd.forward(request, response);
 	}
 
 }

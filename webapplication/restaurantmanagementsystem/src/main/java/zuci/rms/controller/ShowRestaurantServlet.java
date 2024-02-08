@@ -13,12 +13,10 @@ import zuci.rms.model.Restaurant;
 
 public class ShowRestaurantServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
- 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		List<Restaurant> list=RestaurantDao.getAllRestaurants();
 		RequestDispatcher rd=request.getRequestDispatcher("allrestaurant.jsp");
-		request.setAttribute("rest", response);
+		request.setAttribute("rest", list);
 		rd.forward(request, response);
 	}
 
