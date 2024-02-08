@@ -34,4 +34,14 @@
   	<servlet-name>SearchRestaurantServlet</servlet-name>
   	<url-pattern>/SearchRestaurantServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+   	<servlet-name>LogoutServlet</servlet-name>
+   	<display-name>LogoutServlet</display-name>
+   	<description></description>
+   	<servlet-class>zuci.rms.controller.LogoutServlet</servlet-class>
+   </servlet>
+  <servlet-mapping>
+  	<servlet-name>LogoutServlet</servlet-name>
+  	<url-pattern>/LogoutServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
