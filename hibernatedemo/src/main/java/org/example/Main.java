@@ -11,10 +11,15 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-      //  addOrders();
+        addOrders();
        // getOrderById();
        // getAllOrders();
        // deleteOrder();
+        //updateOrder();
+
+    }
+
+    private static void updateOrder() {
         Orders o=new Orders();
         o.setOrderId(3);
         o.setOrderName("Projector");
@@ -28,7 +33,6 @@ public class Main {
         //Orders orders=session.get(Orders.class,3);
         session.update(o);
         session.getTransaction().commit();
-
     }
 
     private static void deleteOrder() {
@@ -57,24 +61,30 @@ public class Main {
         SessionFactory sessionFactory = configuration.buildSessionFactory();
         Session session = sessionFactory.openSession();
         session.beginTransaction();
-        Orders orders=session.get(Orders.class,3); //select * from orders where orderId=3;
+        Orders orders=session.get(Orders.class,2); //select * from orders where orderId=3;
         System.out.println(orders);
         session.getTransaction().commit();
     }
 
     private static void addOrders() {
         Orders o=new Orders();
-        o.setOrderId(200);
-        o.setOrderName("Refrgrirator");
-        o.setOrderCost(8765);
-        o.setOrderQuantity(2);
+        o.setOrderName("Mobile");
+        o.setOrderCost(15000);
+        o.setOrderQuantity(1);
         o.setOrderDate(new Date());
+        o.setAddress("Namakkal");
+        Customer customer=new Customer();
+        customer.setCustomerName("Kamala");
+        customer.setWalletBalance(8456);
+        customer.setOrders(o);
+        o.setCustomer(customer);
         Configuration configuration=new Configuration();
         configuration.configure("hibernate.cfg.xml");
         SessionFactory sessionFactory= configuration.buildSessionFactory();
         Session session=sessionFactory.openSession();
         session.beginTransaction();
         session.save(o);
+        session.save(customer);
         session.getTransaction().commit();
     }
 }

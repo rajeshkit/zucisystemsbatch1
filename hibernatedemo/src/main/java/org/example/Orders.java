@@ -1,72 +1,31 @@
 package org.example;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import java.util.Date;
 
+
+import lombok.*;
+
+import javax.persistence.*;
+import java.util.Date;
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
+@Table(name = "OnlineOrders")
 public class Orders {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "order_id")
     private int orderId;
+    @Column(name = "order_name")
     private String orderName;
+    @Transient
+    private String address;
+    @Column(name = "order_cost")
     private int orderCost;
+    @Column(name = "order_quantity")
     private int orderQuantity;
     private Date orderDate;
-    public Orders(){
+    @OneToOne
+    private Customer customer; //customer.customer_id
 
-    }
-
-    public int getOrderId() {
-        return orderId;
-    }
-
-    public void setOrderId(int orderId) {
-        this.orderId = orderId;
-    }
-
-    public String getOrderName() {
-        return orderName;
-    }
-
-    public void setOrderName(String orderName) {
-        this.orderName = orderName;
-    }
-
-    public int getOrderCost() {
-        return orderCost;
-    }
-
-    public void setOrderCost(int orderCost) {
-        this.orderCost = orderCost;
-    }
-
-    public int getOrderQuantity() {
-        return orderQuantity;
-    }
-
-    public void setOrderQuantity(int orderQuantity) {
-        this.orderQuantity = orderQuantity;
-    }
-
-    public Date getOrderDate() {
-        return orderDate;
-    }
-
-    public void setOrderDate(Date orderDate) {
-        this.orderDate = orderDate;
-    }
-
-    @Override
-    public String toString() {
-        return "Orders{" +
-                "orderId=" + orderId +
-                ", orderName='" + orderName + '\'' +
-                ", orderCost=" + orderCost +
-                ", orderQuantity=" + orderQuantity +
-                ", orderDate=" + orderDate +
-                '}';
-    }
 }

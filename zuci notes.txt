@@ -414,6 +414,10 @@ Inheritance:-
 
 		2.1 Composition
 		2.2 Aggregation
+			One to One
+			One to Many
+			Many to One
+			Many to Many
 final keyword:-
 	before variable - constant variable
 	before method - cannot override
@@ -1016,7 +1020,89 @@ Hibernate:-
 		  connection to the database
 	Transaction - commit, rollbck
 	session 
+Lombok framework:-
+		
+
+Hibernate relationship:-
+	Entity classes has - a reference
+	Add annotation JPA relationship annotation		
+	other side java object persist first
+	then persist object
+	1. Unidirectional
+	2. Bidirectional
+
+public interface Payment {
+ public void payMoney();
+}
+public interface CardPayment{
+	public void getRewardPoints();
+}
+public interface UPI{
+	 public void getScratchCard();
+}		
+class UPIPayment implements Payment,UPI{
+	public void payMoney(){}
+ 	public void getScratchCard(){}
+}
+class CrediCardPayment implements Payment,CardPayment{
+	public void payMoney(){}
+ 	public void getRewardPoints(){}
+}
+
+Dependency Inversion Principles:-
+================================
+	A 	 ---- 		 B
+	B b=new B(); 
+
+IOC Container:
+	Inversion of control container
+	1. Bean Factory
+	2. Application Context
+
+		Bean Factory(I) - spring IOC container
+		     |
+		     | extends
+	    Application Context(I)
+
+	class ClassPathXmlApplicationContext implements ApplicationCotext{
+		
+	}
+		
+
+ApplicationContext ac=new ClassPathXmlApplicationContext();
+
+
+
+
+	class AnnotationApplicationContext implements ApplicationCotext{
+		
+	}
+
+Bean Configuration:
+	1. XML Bean Configuration + XML Bean Defintion 
+	2. XML Bean Configuration + Annotation Bean Defintion
+	3. Java Bean Configuration + Annotation Bean Defintion
+	   @Configuration			@Component
+
+						@Bean 
+
+Dependency Injection
 	
+		Product product=new Product();
+			constructor
+			getter / setter
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

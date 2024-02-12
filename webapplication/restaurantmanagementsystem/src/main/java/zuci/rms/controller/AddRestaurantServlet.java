@@ -8,10 +8,12 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import zuci.rms.dao.RestaurantDao;
+import zuci.rms.dao.IRestaurantDao;
+import zuci.rms.dao.RestaurantDaoImpl;
 import zuci.rms.model.Restaurant;
 
 public class AddRestaurantServlet extends HttpServlet {
+	public IRestaurantDao restaurantDao=null;
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -27,7 +29,8 @@ public class AddRestaurantServlet extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		boolean status=RestaurantDao.addNewRestaurant(restaurant);
+		restaurantDao=new RestaurantDaoImpl();
+		boolean status=restaurantDao.addNewRestaurant(restaurant);
 		
 		response.getWriter().append("Served at: ").append(""+status);
 	}

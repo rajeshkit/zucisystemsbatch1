@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean id="p1" class="zuci.demo.Player"></bean>
+	<bean id="s1" class="zuci.demo.Student"></bean>
+	<bean id="t1" class="zuci.demo.Team" autowire="constructor"> <!-- setter setPlayer(player) -->
+		<!-- <property name="player" ref="p1"></property> -->
+	</bean>
+	
+  	
+</beans>
+
+<!-- <bean id="s1" class="zuci.demo.Student"></bean>
+  	<bean id="d1" class="zuci.demo.Department">
+  		<constructor-arg name="student" ref="s1"></constructor-arg>
+  	</bean>
+  	<bean id="p1" class="zuci.demo.Product"></bean>
+  	<bean id="d2" class="zuci.demo.Department">
+  		<constructor-arg name="product" ref="p1"></constructor-arg>
+  	</bean> -->
+
+<!-- Order o1=new Order -->
+
+  <!-- bean definitions here -->
+
+<!--     <bean id="o1" class="zuci.demo.Order">
+    	<property name="orderId" value="1000"></property> setOrderId(1000) 
+    	<property name="orderName" value="Tv"></property>setOrderName("Tv") 
+   		<property name="product" ref="p1"></property>
+    </bean>
+	<bean id="p1" class="zuci.demo.Product">
+		<constructor-arg name="productId" value="100"></constructor-arg>
+		<constructor-arg name="productName" value="Projector"></constructor-arg>
+	</bean> -->

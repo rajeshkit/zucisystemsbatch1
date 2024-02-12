@@ -7,9 +7,9 @@ import java.util.List;
 import zuci.rms.config.DBUtil;
 import zuci.rms.model.Restaurant;
 
-public class RestaurantDao {
+public class RestaurantDaoImpl implements IRestaurantDao {
     // database code here
-    public static Restaurant getRestaurantById(int restaurantId) {
+    public Restaurant getRestaurantById(int restaurantId) {
         Restaurant restaurant=null;
         try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -35,7 +35,7 @@ public class RestaurantDao {
         }
         return restaurant;
     }
-    public static  List<Restaurant> updateRestaurantNameById(String restaurantName, int restaurantId) {
+    public   List<Restaurant> updateRestaurantNameById(String restaurantName, int restaurantId) {
         String updateQuery="UPDATE restaurant SET name='"+restaurantName+"'WHERE id="+restaurantId+";";
         Restaurant restaurant=null;
         List<Restaurant> restaurantList=new ArrayList<>();
@@ -59,7 +59,7 @@ public class RestaurantDao {
 
     }
 
-    public static void deleteRestaurantById(int restaurantId) {
+    public  void deleteRestaurantById(int restaurantId) {
        try(Connection connection=DriverManager.getConnection(DBUtil.URL, DBUtil.USERNAME, DBUtil.PASSWORD);
             Statement stmt=connection.createStatement();)  {
             stmt.executeUpdate("DELETE * FROM where ID="+restaurantId+"");
@@ -68,7 +68,7 @@ public class RestaurantDao {
         }
     }
 
-    public static List<Restaurant> getAllRestaurants() {
+    public  List<Restaurant> getAllRestaurants() {
     	Restaurant restaurant=null;
     	List<Restaurant> listOfRestaurant=new ArrayList<Restaurant>();
     	try {
@@ -97,7 +97,7 @@ public class RestaurantDao {
         return listOfRestaurant;
     }
 
-    public static boolean addNewRestaurant(Restaurant restaurant) {
+    public  boolean addNewRestaurant(Restaurant restaurant) {
     	boolean flag=false;
     	try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
