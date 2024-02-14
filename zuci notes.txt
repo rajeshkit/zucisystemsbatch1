@@ -1092,6 +1092,169 @@ Dependency Injection
 			constructor
 			getter / setter
 
+Spring web:-
+	dependecies needed
+
+	@Controller
+		- It a special annotation from @Component
+		- Component scan autodetect and creates a bean
+		- Web Controller
+		- @Controller - Handler Bean - which able 
+				to process the request,response
+			      - Methods which handles your request 
+				Responses
+			      - url based
+
+Movie Ticket System
+
+Movie - model
+	private int movieId;
+	private String movieName;		
+	private int tocketCost;
+	private Date releaseDate;
+Dao:-
+		MovieDao
+			public boolean addMovie(Movie movie);
+			public List<Movie> findAllMoview();
+			public Movie findByMovieName(String movieName);
+			public Movie updateMovie(int movieId);
+			public boolean deleteMovie(int movieId);
+		
+		MovieDaoImpl 
+
+Maven:-
+	project management tool
+		- create
+		- standard project folder structure
+		- Dependencies management
+		- change
+		- compile
+		- Run
+		- jar / war - build
+		- documentation
+	Maven - Repository - jars or project dependecies
+		1. Local Repository - On your machine
+		2. Remote Repository - https://mvnrepository.com/
+	Maven Life Cycle:-
+		default:-	
+			validate 
+			compile 
+			test 
+			package - jar - keeps inside the project folder
+			install - jar - keeps inside the .m2 folder
+			deploy	- jar - keeps inside the remote
+	
+	phases 		Goal		Plugins
+ 	validate	validate	maven-plugin-validate
+	compile		compile 	maven-plugin-compile
+	test		test		maven-plugin-surefire
+	package		package		maven-plugin-package
+
+
+	JDBC API - specification how connect and talk to u db
+
+	WebServices:-
+	1.SOAP - JAX-WS API  - specification how SOAP webservice can
+			       be implmented
+	2.Restful - JAX-RS API - specification how Restful webservice can
+			       be implmented
+			
+			Jersey 
+			RestEasy
+	Restful Architectural Style:-
+	==============================
+
+Movie - Resource
+	movieId - 100
+	movieName - abc
+	ticketCost - 456
+	releaseDate - 12/12/2024
+
+		REpresents State Transfer	
+Restful - 6 constraints
+	Uniform resource
+		URI - Uniform Resource Identify
+	create resource - POST - http://localhost:8181/mts/movies 
+	all resource    - GET  - http://localhost:8181/mts/movies
+	getOneResource	- GET http://localhost:8181/mts/movies/{moviename}
+	delete a resource DELETE http://localhost:8181/mts/movies/movieid				  PUT http://localhost:8181/mts/movies/movieid
+	stateless
+	Cachable
+	client/server
+	layered	
+	code on demand 	
+
+	jackson - java obj to json vice versa
+
+		
+	RestClient
+		- Browser
+		- Postman
+		- 		
+
+	web application + restEasy / Jersey - Rest API
+		@Path
+		@PathParam
+		@QueryParam
+
+	web application + spring framework web +web mvc - Rest API
+		@RequestMapping
+		@PathVariable
+		@RequestParam
+
+Steps to create a spring mvc:-
+===========================
+	1. create a maven web application
+	2. pom.xml add dependency
+		jakarata.servlet-api.jar
+		spring-web.jar
+		spring-webmvc.jar
+		hibernate-core.jar
+		mysql-connector-j.jar
+		lombok
+		jstl.jar
+	3. web.xml - dispatcher servlet configure
+	4. Bean configuration - xml bean config + bean definition 
+						  annotation 
+	5. Model class
+	6. @Controller class
+	7. dao inerface and one implmentation class
+	8. src ->  hibernate.cfg.xml
+	9. model class @Entity @Id
+	10. spring forms
+	11. jstl tag
+	12. Model and view
+	13. @valid - <mvc:annotation-driven/>
+	
+Spring boot:-
+
+	@SpringBootApplication
+		@SpringBootConfiguration - @Configuration auto-detect
+		@EnableAutoConfiguration - Automatically read classes
+					   creates as a bean inside 
+					   applicationcontext 
+					   @Bean @Component etc
+		@ComponentScan - basePackage
+	
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
 
 
 

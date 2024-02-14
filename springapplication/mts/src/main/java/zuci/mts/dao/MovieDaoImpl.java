@@ -5,38 +5,49 @@ import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.query.Query;
 import org.springframework.stereotype.Component;
 
 import zuci.mts.model.Movie;
+
 @Component
 public class MovieDaoImpl implements MovieDao {
 	@Override
 	public boolean addMovie(Movie movie) {
-	        Configuration configuration=new Configuration();
-	        configuration.configure("hibernate.cfg.xml");
-	        SessionFactory sessionFactory= configuration.buildSessionFactory();
-	        Session session=sessionFactory.openSession();
-	        session.beginTransaction();
-	        session.save(movie);
-	        session.getTransaction().commit();
-	        return true;
+		boolean flag = false;
+		Configuration configuration = new Configuration();
+		configuration.configure("hibernate.cfg.xml");
+		SessionFactory sessionFactory = configuration.buildSessionFactory();
+		Session session = sessionFactory.openSession();
+		session.beginTransaction();
+		session.save(movie);
+		session.getTransaction().commit();
+		flag = true;
+		return flag;
 	}
 
 	@Override
 	public List<Movie> findAllMoview() {
-	
-		return null;
+		Configuration configuration = new Configuration();
+		configuration.configure("hibernate.cfg.xml");
+		SessionFactory sessionFactory = configuration.buildSessionFactory();
+		Session session = sessionFactory.openSession();
+		session.beginTransaction();
+		Query query=session.createQuery("FROM Movie");
+		List<Movie> listOfMovies = query.getResultList();
+		session.getTransaction().commit();
+		return listOfMovies;
 	}
 
 	@Override
 	public Movie findByMovieName(String movieName) {
-	
+
 		return null;
 	}
 
 	@Override
 	public Movie updateMovie(int movieId) {
-		
+
 		return null;
 	}
 
