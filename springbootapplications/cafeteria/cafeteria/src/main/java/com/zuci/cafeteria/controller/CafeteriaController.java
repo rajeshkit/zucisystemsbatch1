@@ -12,7 +12,12 @@ import java.util.Date;
 import java.util.List;
 
 @RestController
+@CrossOrigin
 public class CafeteriaController {
+    @GetMapping("/")
+    public String welcome(){
+        return "success";
+    }
     @Autowired
     private CafeteriaService cafeteriaService;
     @PostMapping("/cafeteria")
