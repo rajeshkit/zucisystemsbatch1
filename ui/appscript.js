@@ -23,7 +23,8 @@ xhttp.onreadystatechange = function() {
     
   }
 };
-xhttp.open("GET", "http://localhost:5000/cafeteria");
+
+xhttp.open("GET", "http://localhost:9090/cafeteria");
 xhttp.send();
 }
 function registerCafeteria(e){
