@@ -32,7 +32,8 @@ public class CafeteriaSecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.csrf(e->e.disable());
         http.authorizeHttpRequests(auth->
-                auth.requestMatchers("/","/users","/login").permitAll()
+                auth.requestMatchers("/","/users","/login" ,"/v3/api-docs/**",
+                                "/swagger-ui/**").permitAll()
 //                        .requestMatchers(HttpMethod.GET,"/cafeteria/**").hasRole("user")
 //                        .requestMatchers("/","/cafeteria/**").hasAnyRole("admin")
               .anyRequest().authenticated())
